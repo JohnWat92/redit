@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// import Categories from '../components/Categories';
 import styles from './styles.css'
 
 class App extends Component {
   render() {
     return (
       <div className={styles.app}>
+        {/*Categories*/}
         {this.props.children}
       </div>
     );
@@ -18,3 +20,4 @@ App.propTypes = {
 };
 
 export default App;
+ 
