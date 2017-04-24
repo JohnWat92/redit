@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 import styles from './styles.css';
@@ -10,7 +10,7 @@ import styles from './styles.css';
 // post post categories?
   // console.log(post);
 
-const Post = ({post, updateVote}) => (
+const Post = ({ post, updateVote }) => (
   <div className={styles.postCard}>
     <Card>
       <a href={post.link}>
@@ -21,7 +21,9 @@ const Post = ({post, updateVote}) => (
       </CardText>
       <CardActions>
         <div className={styles.postBottom}>
-          <FlatButton label="Vote" onClick={updateVote} />
+          {/*<FlatButton label="Vote" onClick={updateVote} />*/}
+          <FlatButton label="Vote" onClick={() => updateVote(post.id)} />
+          
           <Chip >
               {post.categories}
           </Chip>
