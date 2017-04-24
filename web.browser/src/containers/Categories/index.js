@@ -1,14 +1,15 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
-import HeaderBar from '../HeaderBar';
+import CategoriesHeaderBar from '../../components/CategoriesHeaderBar';
+import Week from '../../components/Weeks';
+import {data} from '../../mock-data';
 
-export default class DrawerSimpleExample extends React.Component {
+export default class Categories extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: true };
   }
 
   handleToggle = () => this.setState({ open: !this.state.open });
@@ -16,14 +17,9 @@ export default class DrawerSimpleExample extends React.Component {
   render() {
     return (
       <div>
-        <RaisedButton
-          label="Toggle Drawer"
-          onTouchTap={this.handleToggle}
-        />
         <Drawer open={this.state.open}>
-          <HeaderBar />
-          <MenuItem>Menu Item</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
+          <CategoriesHeaderBar />
+          <Week />
         </Drawer>
       </div>
     );

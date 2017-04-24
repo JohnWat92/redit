@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 
 import App from './containers/App';
 import MainLayout from './layouts/MainLayout';
-import HeaderBar from './components/HeaderBar';
-import Drawer from './components/Drawer';
+// import CategoriesHeaderBar from './components/CategoriesHeaderBar';
+import Categories from './containers/Categories';
 import Post from './components/Post';
+import ToolBar from './components/PostToolbar';
 
 import Welcome from './containers/Welcome';
 import PostList from './containers/PostList';
@@ -33,7 +34,7 @@ ReactDOM.render(
     <Router>
       <MainLayout>
         <App>
-          <Post />
+          <Categories />
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route path="/posts" component={PostList} />

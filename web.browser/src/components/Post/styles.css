@@ -1,0 +1,7 @@
+.postBottom{
+  display: flex;
+  justify-content: space-between;
+}
+.postCard{
+  margin:1rem;
+}

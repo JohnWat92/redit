@@ -1,29 +1,29 @@
 import React from 'react';
+
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import Chip from 'material-ui/Chip';
+import styles from './styles.css';
 
-const Post = () => (
-  <Card>
-    <CardHeader
-      title="URL Avatar"
-      subtitle="Subtitle"
-    />
-    <CardMedia
-      overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-    >
-    </CardMedia>
-    <CardTitle title="Card title" subtitle="Card subtitle" />
-    <CardText>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-    </CardText>
-    <CardActions>
-      <FlatButton label="Action1" />
-      <FlatButton label="Action2" />
-    </CardActions>
-  </Card>
+import PostListContainer from '../../containers/PostList/PostListContainer';
+// post post categories?
+const Post = ({post, updateVote}) => (
+  <div className={styles.postCard}>
+    <Card>
+      <CardTitle title={post.title}/>  
+      <CardText>
+        {post.description}
+      </CardText>
+      <CardActions>
+        <div className={styles.postBottom}>
+          <FlatButton label="Upvote Place" onClick={updateVote} />
+          <Chip >
+              CHIP I
+          </Chip>
+        </div>
+      </CardActions>
+    </Card>
+  </div>
 );
 
 export default Post;
