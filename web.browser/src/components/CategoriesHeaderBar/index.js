@@ -3,8 +3,6 @@ import AppBar from 'material-ui/AppBar';
 
 import IconButton from 'material-ui/IconButton';
 import ContactsIcon from 'material-ui/svg-icons/communication/import-contacts';
-import FlatButton from 'material-ui/FlatButton';
-
 
 const CategoriesHeaderBar = () => (
   <AppBar

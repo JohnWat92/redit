@@ -1,9 +1,9 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+// import MenuItem from 'material-ui/MenuItem';
 import CategoriesHeaderBar from '../../components/CategoriesHeaderBar';
 import Week from '../../components/Weeks';
-import {data} from '../../mock-data';
+// import {data} from '../../mock-data';
 
 export default class Categories extends React.Component {
 

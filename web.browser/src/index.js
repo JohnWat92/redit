@@ -6,7 +6,7 @@ import MainLayout from './layouts/MainLayout';
 // import CategoriesHeaderBar from './components/CategoriesHeaderBar';
 import Categories from './containers/Categories';
 import Post from './components/Post';
-import ToolBar from './components/PostToolbar';
+// import ToolBar from './components/PostToolbar';
 
 import Welcome from './containers/Welcome';
 import PostList from './containers/PostList';

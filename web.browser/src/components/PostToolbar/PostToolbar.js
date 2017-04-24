@@ -1,10 +1,12 @@
 import React from 'react';
 
-import {ToolBar} from 'material-ui/Toolbar';
-import FlatButton from 'material-ui/FlatButton';
+import { Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
 
-const PostToolbar = () =>{
-  <ToolBar>
-  </ToolBar>
-}
+const PostToolBar = () => (
+  <div>
+    <Toolbar>
+      <ToolbarTitle text="Posts" />
+    </Toolbar>
+  </div>
+);
 export default PostToolBar;
