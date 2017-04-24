@@ -8,18 +8,22 @@ import styles from './styles.css';
 // import PostListContainer from '../../containers/PostList/PostListContainer';
 
 // post post categories?
+  // console.log(post);
+
 const Post = ({post, updateVote}) => (
   <div className={styles.postCard}>
     <Card>
-      <CardTitle title={post.title} />
+      <a href={post.link}>
+        <CardTitle title={post.title} />
+      </a>
       <CardText>
         {post.description}
       </CardText>
       <CardActions>
         <div className={styles.postBottom}>
-          <FlatButton label="Upvote Place" onClick={updateVote} />
+          <FlatButton label="Vote" onClick={updateVote} />
           <Chip >
-              CHIP I
+              {post.categories}
           </Chip>
         </div>
       </CardActions>

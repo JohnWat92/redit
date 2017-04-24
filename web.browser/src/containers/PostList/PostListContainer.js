@@ -14,8 +14,9 @@ class PostListContainer extends Component {
       orderby: 'newest'
     };
   }
-  updateVote(){
+  updateVote(posts){
     console.log('updated');
+    let votes = posts.votes +1;
   }
   sortPopular(posts) {
     const sortedPosts = posts.sort((a, b) => b.votes - a.votes);
