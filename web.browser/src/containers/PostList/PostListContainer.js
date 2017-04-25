@@ -9,25 +9,18 @@ class PostListContainer extends Component {
   constructor() {
     super();
     this.updateVote = this.updateVote.bind(this);
-    this.sortPopular = this.sortPopular.bind(this);
-    this.sortNewest = this.sortNewest.bind(this);
-    
+    // this.sortPopular = this.sortPopular.bind(this);
+    // this.sortNewest = this.sortNewest.bind(this);
+
     this.state = {
       posts: data.posts,
       orderby: 'newest'
     };
   }
-  updateVote(postID){
+  updateVote(postID) {
     console.log('updated');
-    console.log(posts);
-    this.state.posts.map((post) => postID === post.id && (
-      post.votes += 1
-    ));
+    this.state.posts.map(post => postID === post.id && (post.votes += 1));
     this.forceUpdate();
-    // var votes = posts.votes;
-    // votes += votes + 1;
-    // console.log(votes);
-    // return votes;
   }
   sortPopular(posts) {
     console.log('sorting post by popularity');
@@ -55,8 +48,6 @@ class PostListContainer extends Component {
         <PostList
           posts={this.state.posts}
           updateVote={this.updateVote}
-          sortPopular={() => this.sortPopular(this.state.posts)}
-          sortNewest={this.sortNewest.bind(this, this.state.posts)}
         />
       </div>
     );

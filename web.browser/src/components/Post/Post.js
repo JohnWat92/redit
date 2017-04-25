@@ -5,15 +5,10 @@ import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 import styles from './styles.css';
 
-// import PostListContainer from '../../containers/PostList/PostListContainer';
-
-// post post categories?
-  // console.log(post);
-
 const Post = ({ post, updateVote }) => (
   <div className={styles.postCard}>
     <Card>
-      <a href={post.link}>
+      <a className={styles.title} href={post.link}>
         <CardTitle title={post.title} />
       </a>
       <CardText>
@@ -21,11 +16,11 @@ const Post = ({ post, updateVote }) => (
       </CardText>
       <CardActions>
         <div className={styles.postBottom}>
-          {/*<FlatButton label="Vote" onClick={updateVote} />*/}
-          <FlatButton label="Vote" onClick={() => updateVote(post.id)} />
-          
-          <Chip >
-              {post.categories}
+          <FlatButton onClick={() => updateVote(post.id)}>
+            <span className={styles.voteButton}><svg className={styles.upArrow} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M9 6l-4 4h8z"/></svg> Vote {post.votes}</span>
+          </FlatButton>
+          <Chip>
+            {post.categories}
           </Chip>
         </div>
       </CardActions>

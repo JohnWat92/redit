@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './containers/App';
 import MainLayout from './layouts/MainLayout';
-// import CategoriesHeaderBar from './components/CategoriesHeaderBar';
 import Categories from './containers/Categories';
-import Post from './components/Post';
-// import ToolBar from './components/PostToolbar';
+// import Post from './components/Post';
 
 import Welcome from './containers/Welcome';
 import PostList from './containers/PostList';
@@ -20,7 +18,6 @@ import {
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/mui-theme';
 import './styles/index.css';
-import { data } from './mock-data.js';
 
 // import './containers/App/index.js';
 // Needed for onTouchTap (Material UI)
