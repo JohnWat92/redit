@@ -46,11 +46,11 @@ class PostListContainer extends Component {
     return (
       <div>
         <PostToolBar
-          sortNewest = {this.sortNewest}
-          sortPopular = {this.sortPopular}
+          sortNewest={this.props.sortNewest}
+          sortPopular={this.props.sortPopular}
         />
         <PostList
-          updateVote={this.updateVote}
+          updateVote={this.props.updateVote}
         />
       </div>
     );

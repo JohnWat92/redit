@@ -15,11 +15,14 @@ export const PostsReducer = (state = data.posts, action) => {
       });
       return newPostList;
     case SORT_NEWEST:
-      console.log('newest', state);
+      console.log(' sorting newest', state);
+      console.log('state', state); // gives me the right thing
+      console.log('this', this); //undefined
+      // console.log('this.state', this.state);
       const newestPosts = state.sort((a, b) => b.id - a.id);
       return newestPosts;
     case SORT_POPULAR:
-      console.log('popular', state);
+      console.log(' sorting popular', state);
       const popularPosts = state.sort((a, b) => b.votes - a.votes);
       return popularPosts;
     default:
@@ -27,9 +30,9 @@ export const PostsReducer = (state = data.posts, action) => {
   }
 }
 
-// export const WeeksReducer = (state = data.weeks, action) => {
-//   switch(action.type) {
-//     default:
-//       return state;
-//   }
-// }
+export const WeeksReducer = (state = data.weeks, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
