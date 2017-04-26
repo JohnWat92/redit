@@ -23,19 +23,19 @@ class PostListContainer extends Component {
     // this.state.posts.map(post => postID === post.id && (post.votes += 1));
     // this.forceUpdate();
   }
-  sortPopular(posts) {
+  sortPopular() {
     console.log('sorting post by popularity');
     console.log('THIS IS THE PROPS',this.props);
-    this.props.dispatch(sortPopular(posts));
+    this.props.dispatch(sortPopular());
     // const sortedPosts = posts.sort((a, b) => b.votes - a.votes);
     // this.setState({
     //   orderby: 'popular',
     //   posts: sortedPosts
     // });
   }
-  sortNewest(posts) {
+  sortNewest() {
     console.log('sorting post by newest');
-    this.props.dispatch(sortNewest(posts));
+    this.props.dispatch(sortNewest());
     // const sortedPosts = posts.sort((a, b) => b.id - a.id);
     // this.setState({
     //   orderby: 'newest',
