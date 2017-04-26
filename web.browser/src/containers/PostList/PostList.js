@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from '../../components/Post';
 import { connect } from 'react-redux';
-import { sortNewest, sortPopular } from '../../redux/actions';
+// import { sortNewest, sortPopular } from '../../redux/actions';
 
 const PostList = ({ posts, sortPopular, sortNewest }) => {
   return (
@@ -10,8 +10,6 @@ const PostList = ({ posts, sortPopular, sortNewest }) => {
         <Post
           key={post.id}
           post={post}
-          sortPopular={sortPopular}
-          sortNewest={sortNewest}
         />
       ))}
     </div>
@@ -20,4 +18,3 @@ const PostList = ({ posts, sortPopular, sortNewest }) => {
 
 const mapStateToProps = (state) => ( { posts: state.posts });
 export default connect(mapStateToProps)(PostList);
-

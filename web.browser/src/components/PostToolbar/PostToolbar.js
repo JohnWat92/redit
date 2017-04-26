@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
 import FlatButton from 'material-ui/FlatButton';
 import styles from './styles.css';
 import { sortNewest, sortPopular } from '../../redux/actions';
 
-const PostToolBar = ({ post, sortPopular, sortNewest, dispatch }) => (
+const PostToolBar = ({ post, dispatch }) => (
   <div>
     <Toolbar>
       <ToolbarTitle className={styles.text} text="Posts" />
@@ -17,4 +18,4 @@ const PostToolBar = ({ post, sortPopular, sortNewest, dispatch }) => (
     </Toolbar>
   </div>
 );
-export default PostToolBar;
+export default connect()(PostToolBar);

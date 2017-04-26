@@ -4,12 +4,12 @@ import { data } from '../mock-data';
 
 
 export const PostsReducer = (state = data.posts, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case UPDATE_VOTE:
       const newPostList = state.map((post) => {
         // console.log(action.id);
-        if (action.id === post.id){
-          post.votes++
+        if (action.id === post.id) {
+          post.votes++;
         }
         return post;
       });
