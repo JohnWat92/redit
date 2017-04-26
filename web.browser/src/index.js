@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 import App from './containers/App';
 import MainLayout from './layouts/MainLayout';
@@ -27,18 +29,20 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 ReactDOM.render(
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <Router>
-      <MainLayout>
-        <App>
-          <Categories />
-          <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route path="/posts" component={PostList} />
-          </Switch>
-        </App>
-      </MainLayout>
-    </Router>
-  </MuiThemeProvider>,
+  <Provider store={store}>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <Router>
+        <MainLayout>
+          <App>
+            <Categories />
+            <Switch>
+              <Route exact path="/" component={Welcome} />
+              <Route path="/posts" component={PostList} />
+            </Switch>
+          </App>
+        </MainLayout>
+      </Router>
+    </MuiThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );

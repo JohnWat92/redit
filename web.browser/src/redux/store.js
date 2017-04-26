@@ -1,10 +1,12 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import reduxLogger from 'redux-logger';
 
-Store(
+import { PostsReducer, WeeksReducer } from './reducer';
+
+export default createStore(
   combineReducers({
-    messages: MessagesReducer, 
-    user: ChatUsersReducer
+    posts: PostsReducer,
+    weeks: WeeksReducer
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(reduxLogger)
