@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateVote, sortPopular, sortNewest } from '../../redux/actions';
-import { data } from '../../mock-data';
+// import { data } from '../../mock-data';
 
 import PostList from './PostList';
 import PostToolBar from '../../components/PostToolBar';
@@ -12,10 +12,9 @@ class PostListContainer extends Component {
     this.updateVote = this.updateVote.bind(this);
     this.sortPopular = this.sortPopular.bind(this);
     this.sortNewest = this.sortNewest.bind(this);
-    this.state = {
-      posts: data.posts,
-      orderby: 'newest'
-    };
+    // this.state = {
+    //   orderby: 'newest'
+    // };
   }
   updateVote(id) {
     console.log('updated');
@@ -51,11 +50,12 @@ class PostListContainer extends Component {
         />
         <PostList
           updateVote={this.props.updateVote}
+          posts={this.props.posts}
         />
       </div>
     );
   }
 }
-const mapStateToProps = (state) => ( { posts: state.posts });
+const mapStateToProps = (state) => ({ posts: state.posts });
 export default connect(mapStateToProps)(PostListContainer);
 

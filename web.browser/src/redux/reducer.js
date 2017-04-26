@@ -9,7 +9,7 @@ export const PostsReducer = (state = data.posts, action) => {
       const newPostList = state.map((post) => {
         // console.log(action.id);
         if (action.id === post.id) {
-          post.votes++;
+          post.votes = post.votes + 1;
         }
         return post;
       });
