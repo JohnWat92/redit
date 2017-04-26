@@ -1,0 +1,17 @@
+.postBottom{
+  display: flex;
+  justify-content: space-between;
+}
+.postCard{
+  margin:1rem;
+  text-decoration: none;
+}
+.voteButton{
+  margin:1rem;
+}
+.title{
+  text-decoration:none;
+}
+.upArrow{
+  transform: translateY(5px);
+}
