@@ -7,32 +7,24 @@ export const PostsReducer = (state = data.posts, action) => {
   switch (action.type) {
     case UPDATE_VOTE:
       const newPostList = state.map((post) => {
-        // console.log(action.id);
-        if (action.id === post.id) {
-          post.votes = post.votes + 1;
-        }
+        if (action.id === post.id) { post.votes++; }
         return post;
       });
       return newPostList;
     case SORT_NEWEST:
-      console.log(' sorting newest', state);
-      console.log('state', state); // gives me the right thing
-      console.log('this', this); //undefined
-      // console.log('this.state', this.state);
-      const newestPosts = state.sort((a, b) => b.id - a.id);
-      return newestPosts;
+      let newestPosts = [...state]
+      return newestPosts.sort((a, b) => b.id - a.id);
     case SORT_POPULAR:
-      console.log(' sorting popular', state);
-      const popularPosts = state.sort((a, b) => b.votes - a.votes);
-      return popularPosts;
+      let popularPosts = [...state]
+      return popularPosts.sort((a, b) => b.votes - a.votes);
     default:
       return state;
   }
-}
+};
 
 export const WeeksReducer = (state = data.weeks, action) => {
   switch (action.type) {
     default:
       return state;
   }
-}
+};

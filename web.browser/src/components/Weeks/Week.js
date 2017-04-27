@@ -5,7 +5,7 @@ import Divider from 'material-ui/Divider';
 import { data } from '../../mock-data';
 
 class Week extends Component {
-  weekItems(category, i) { return ( <ListItem primaryText={category} key={i} />); }
+  weekItems(category, i) { return (<ListItem primaryText={category} key={i} />); }
 
   createWeek(week, i) {
     return (

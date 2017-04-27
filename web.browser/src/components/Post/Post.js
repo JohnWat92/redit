@@ -1,16 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 import styles from './styles.css';
-import { connect } from 'react-redux';
 import { updateVote } from '../../redux/actions';
 
 
 
 const Post = ({ post, votes, dispatch }) => {
-  console.log('updated', post)
   return (
     <div className={styles.postCard}>
       <Card>
